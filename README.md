@@ -1,4 +1,4 @@
-# Write the name of your application
+# Shiny Hunting Tracker
 
 ## Instructions:
 - Read the app suggestions and requirements carefully posted in the Brightspace assignment drop box.
