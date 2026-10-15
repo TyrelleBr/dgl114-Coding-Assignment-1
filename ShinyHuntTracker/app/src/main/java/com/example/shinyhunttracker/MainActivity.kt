@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.shinyhunttracker.ui.theme.ShinyHuntTrackerTheme
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.ui.res.painterResource
@@ -26,6 +27,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import kotlin.dec
 
@@ -45,7 +47,8 @@ class MainActivity : ComponentActivity() {
 fun CurrentPokemonName(name: String, modifier: Modifier = Modifier) {
     Text(
         text = name,
-        modifier = modifier
+        modifier = modifier,
+        color = Color(0xFFEAF2FF)
     )
 }
 
@@ -53,7 +56,8 @@ fun CurrentPokemonName(name: String, modifier: Modifier = Modifier) {
 fun ShinyHuntTrackerTitle(name: String = "Shiny Hunt Tracker", modifier: Modifier = Modifier) {
     Text(
         text = name,
-        modifier = modifier
+        modifier = modifier,
+        color = Color(0xFF67E8F9)
     )
 }
 
@@ -61,7 +65,8 @@ fun ShinyHuntTrackerTitle(name: String = "Shiny Hunt Tracker", modifier: Modifie
 fun PokemonGameName(name: String, modifier: Modifier = Modifier) {
     Text(
         text = name,
-        modifier = modifier
+        modifier = modifier,
+        color = Color(0xFF9BAEC8)
     )
 }
 
@@ -89,7 +94,10 @@ fun EncounterCounterScreen() {
     var encounters by remember {
         mutableIntStateOf(0)
     }
-    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        containerColor = Color(0xFF0B1120)
+    ) { innerPadding ->
         Column(
             modifier = Modifier.fillMaxSize().padding(innerPadding),
             verticalArrangement = Arrangement.Center,
@@ -105,9 +113,13 @@ fun EncounterCounterScreen() {
             CurrentPokemonName("Cubone")
             PokemonGameName("Pokemon Emerald")
             Column(
+                modifier = Modifier.background(Color(0xFF131F35)),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(text = encounters.toString())
+                Text(
+                    text = encounters.toString(),
+                    color = Color(0xFFEAF2FF)
+                )
                 Row() {
 
                     CounterButtonMinus(fun() {
