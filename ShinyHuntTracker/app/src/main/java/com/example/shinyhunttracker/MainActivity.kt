@@ -27,6 +27,7 @@ class MainActivity : ComponentActivity() {
                         ShinyHuntTrackerTitle()
                         PokemonGameName("Emerald")
                         CounterButtonPlus()
+                        CounterButtonMinus()
                     }
 
                 }
@@ -60,5 +61,15 @@ fun CounterButtonPlus() {
         println("Encounters: ${currentHuntEncounters}")
     }) {
         Text(text = "+")
+    }
+}
+
+@Composable
+fun CounterButtonMinus() {
+    Button(onClick = {
+        currentHuntEncounters--
+        println("Encounters: ${currentHuntEncounters}")
+    }) {
+        Text(text = "-")
     }
 }
