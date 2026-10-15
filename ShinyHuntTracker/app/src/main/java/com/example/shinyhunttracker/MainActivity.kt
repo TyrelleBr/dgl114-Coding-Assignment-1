@@ -21,8 +21,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ShinyHuntTrackerTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     ShinyHuntTrackerTitle()
+                    CounterButtonPlus()
                 }
             }
         }
@@ -37,3 +38,11 @@ fun ShinyHuntTrackerTitle(name: String = "Shiny Hunt Tracker", modifier: Modifie
     )
 }
 
+@Composable
+fun CounterButtonPlus() {
+    Button(onClick = {
+        println("plus button clicked")
+    }) {
+        Text(text = "+")
+    }
+}
