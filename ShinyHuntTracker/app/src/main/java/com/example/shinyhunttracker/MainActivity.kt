@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -28,7 +29,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import kotlin.dec
 
 class MainActivity : ComponentActivity() {
@@ -48,7 +51,9 @@ fun CurrentPokemonName(name: String, modifier: Modifier = Modifier) {
     Text(
         text = name,
         modifier = modifier,
-        color = Color(0xFFEAF2FF)
+        color = Color(0xFFEAF2FF),
+        fontSize = 40.sp,
+        fontWeight = FontWeight.Bold
     )
 }
 
@@ -57,7 +62,8 @@ fun ShinyHuntTrackerTitle(name: String = "Shiny Hunt Tracker", modifier: Modifie
     Text(
         text = name,
         modifier = modifier,
-        color = Color(0xFF67E8F9)
+        color = Color(0xFF67E8F9),
+        fontSize = 36.sp
     )
 }
 
@@ -66,7 +72,8 @@ fun PokemonGameName(name: String, modifier: Modifier = Modifier) {
     Text(
         text = name,
         modifier = modifier,
-        color = Color(0xFF9BAEC8)
+        color = Color(0xFF9BAEC8),
+        fontSize = 15.sp
     )
 }
 
@@ -75,14 +82,21 @@ fun CounterButtonPlus(onPlusClick: () -> Unit) {
 
     Button(onClick = onPlusClick
     ) {
-        Text(text = "+")
+        Text(
+            text = "+",
+            fontSize = 30.sp
+        )
     }
 }
 
 @Composable
 fun CounterButtonMinus(onMinusClick: () -> Unit) {
     Button(onClick = onMinusClick) {
-        Text(text = "-")
+
+        Text(
+            text = "-",
+            fontSize = 30.sp
+        )
     }
 }
 
@@ -118,7 +132,8 @@ fun EncounterCounterScreen() {
             ) {
                 Text(
                     text = encounters.toString(),
-                    color = Color(0xFFEAF2FF)
+                    color = Color(0xFFEAF2FF),
+                    fontSize = 50.sp
                 )
                 Row() {
 
