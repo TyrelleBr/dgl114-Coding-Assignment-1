@@ -25,6 +25,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.unit.dp
+import kotlin.dec
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,6 +80,14 @@ fun CounterButtonPlus(onPlusClick: () -> Unit) {
     }
 }
 
+@Composable
+fun CounterButtonMinus(onMinusClick: () -> Unit) {
+    Button(onClick = onMinusClick) {
+        Text(text = "-")
+    }
+}
+
+
 
 
 @Composable
@@ -95,10 +104,17 @@ fun EncounterCounterScreen() {
                 modifier = Modifier.size(160.dp),
                 contentScale = ContentScale.Fit
             )
-            PokemonGameName("Emerald")
+            PokemonGameName("Pokemon Emerald")
             CurrentPokemonName("Cubone")
             Text(text = encounters.toString())
             Row() {
+
+                CounterButtonMinus(fun () {
+                    if(encounters > 0) {
+                        encounters--
+                    }
+                })
+
                 CounterButtonPlus(fun () {
                     encounters++
                 })
