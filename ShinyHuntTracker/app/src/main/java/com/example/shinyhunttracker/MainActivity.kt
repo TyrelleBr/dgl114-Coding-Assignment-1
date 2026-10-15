@@ -71,23 +71,21 @@ fun EncounterCounter(encounters: Int, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun CounterButtonPlus() {
+fun CounterButtonPlus(onPlusClick: () -> Unit) {
 
-    var encounters by remember {
-        mutableIntStateOf(0)
-    }
-
-
-    Button(onClick = {
-        encounters++
-        println("Encounters: ${encounters}")
-    }) {
+    Button(onClick = onPlusClick
+    ) {
         Text(text = "+")
     }
 }
 
+
+
 @Composable
 fun EncounterCounterScreen() {
+    var encounters by remember {
+        mutableIntStateOf(0)
+    }
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
         Column(modifier = Modifier.fillMaxSize().padding(innerPadding)) {
             ShinyHuntTrackerTitle()
