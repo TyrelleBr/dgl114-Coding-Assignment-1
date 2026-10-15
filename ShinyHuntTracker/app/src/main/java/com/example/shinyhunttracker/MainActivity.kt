@@ -15,6 +15,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.shinyhunttracker.ui.theme.ShinyHuntTrackerTheme
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.foundation.layout.size
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +30,12 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Column(modifier = Modifier.fillMaxSize().padding(innerPadding)) {
                         ShinyHuntTrackerTitle()
+                        Image(
+                            painter = painterResource(R.drawable.cubone),
+                            contentDescription = "Cubone sprite",
+                            modifier = Modifier.size(160.dp),
+                            contentScale = ContentScale.Fit
+                        )
                         PokemonGameName("Emerald")
                         CounterButtonPlus()
                         CounterButtonMinus()
