@@ -23,11 +23,13 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -127,8 +129,19 @@ fun EncounterCounterScreen() {
             CurrentPokemonName("Cubone")
             PokemonGameName("Pokemon Emerald")
             Column(
-                modifier = Modifier.background(Color(0xFF131F35)),
-                horizontalAlignment = Alignment.CenterHorizontally
+                modifier = Modifier
+                    .clip(RoundedCornerShape(15.dp))
+                    .background(Color(0xFF131F35))
+                    .padding(
+                        start = 50.dp,
+                        top = 8.dp,
+                        end = 50.dp,
+                        bottom = 16.dp
+                    )
+                    
+                    ,
+                horizontalAlignment = Alignment.CenterHorizontally,
+
             ) {
                 Text(
                     text = encounters.toString(),
