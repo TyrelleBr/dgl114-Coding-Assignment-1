@@ -25,6 +25,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Column(modifier = Modifier.fillMaxSize().padding(innerPadding)) {
                         ShinyHuntTrackerTitle()
+                        PokemonGameName("Emerald")
                         CounterButtonPlus()
                     }
 
@@ -41,6 +42,14 @@ fun ShinyHuntTrackerTitle(name: String = "Shiny Hunt Tracker", modifier: Modifie
     Text(
         text = name,
         modifier = modifier
+    )
+}
+
+@Composable
+fun PokemonGameName(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = name,
+        modifier = Modifier
     )
 }
 
