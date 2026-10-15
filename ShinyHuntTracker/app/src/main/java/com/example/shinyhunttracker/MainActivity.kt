@@ -56,8 +56,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-var currentHuntEncounters = 0
-
 @Composable
 fun CurrentPokemonName(name: String, modifier: Modifier = Modifier) {
     Text(
@@ -107,13 +105,7 @@ fun CounterButtonPlus() {
 }
 
 @Composable
-fun CounterButtonMinus() {
-    Button(onClick = {
-        if(currentHuntEncounters != 0) {
-            currentHuntEncounters--
         }
-        println("Encounters: ${currentHuntEncounters}")
-    }) {
-        Text(text = "-")
+
     }
 }
