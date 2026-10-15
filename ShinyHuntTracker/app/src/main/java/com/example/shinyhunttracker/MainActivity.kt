@@ -67,7 +67,9 @@ fun CounterButtonPlus() {
 @Composable
 fun CounterButtonMinus() {
     Button(onClick = {
-        currentHuntEncounters--
+        if(currentHuntEncounters != 0) {
+            currentHuntEncounters--
+        }
         println("Encounters: ${currentHuntEncounters}")
     }) {
         Text(text = "-")
