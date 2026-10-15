@@ -47,7 +47,8 @@ fun ShinyHuntTrackerTitle(name: String = "Shiny Hunt Tracker", modifier: Modifie
 @Composable
 fun CounterButtonPlus() {
     Button(onClick = {
-        println("plus button clicked")
+        currentHuntEncounters++
+        println("Encounters: ${currentHuntEncounters}")
     }) {
         Text(text = "+")
     }
