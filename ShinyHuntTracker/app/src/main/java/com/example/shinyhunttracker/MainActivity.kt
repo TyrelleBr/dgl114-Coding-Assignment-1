@@ -57,8 +57,8 @@ var currentHuntEncounters = 0
 @Composable
 fun CurrentPokemonName(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Cubone",
-        modifier = Modifier
+        text = name,
+        modifier = modifier
     )
 }
 
@@ -74,7 +74,7 @@ fun ShinyHuntTrackerTitle(name: String = "Shiny Hunt Tracker", modifier: Modifie
 fun PokemonGameName(name: String, modifier: Modifier = Modifier) {
     Text(
         text = name,
-        modifier = Modifier
+        modifier = modifier
     )
 }
 
@@ -82,7 +82,7 @@ fun PokemonGameName(name: String, modifier: Modifier = Modifier) {
 fun EncounterCounter(encounters: Int, modifier: Modifier = Modifier) {
     Text(
         text = "${encounters}",
-        modifier = Modifier
+        modifier = modifier
     )
 }
 
