@@ -37,6 +37,7 @@ class MainActivity : ComponentActivity() {
                             contentScale = ContentScale.Fit
                         )
                         PokemonGameName("Emerald")
+                        CurrentPokemonName("Cubone")
                         CounterButtonPlus()
                         CounterButtonMinus()
                     }
@@ -48,6 +49,14 @@ class MainActivity : ComponentActivity() {
 }
 
 var currentHuntEncounters = 0
+
+@Composable
+fun CurrentPokemonName(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Cubone",
+        modifier = Modifier
+    )
+}
 
 @Composable
 fun ShinyHuntTrackerTitle(name: String = "Shiny Hunt Tracker", modifier: Modifier = Modifier) {
