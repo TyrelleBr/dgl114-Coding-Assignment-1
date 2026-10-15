@@ -20,6 +20,10 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.foundation.layout.size
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
@@ -88,9 +92,15 @@ fun EncounterCounter(encounters: Int, modifier: Modifier = Modifier) {
 
 @Composable
 fun CounterButtonPlus() {
+
+    var encounters by remember {
+        mutableIntStateOf(0)
+    }
+
+
     Button(onClick = {
-        currentHuntEncounters++
-        println("Encounters: ${currentHuntEncounters}")
+        encounters++
+        println("Encounters: ${encounters}")
     }) {
         Text(text = "+")
     }
