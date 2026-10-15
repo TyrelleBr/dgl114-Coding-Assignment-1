@@ -32,25 +32,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ShinyHuntTrackerTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Column(modifier = Modifier.fillMaxSize().padding(innerPadding)) {
-                        ShinyHuntTrackerTitle()
-                        Image(
-                            painter = painterResource(R.drawable.cubone),
-                            contentDescription = "Cubone sprite",
-                            modifier = Modifier.size(160.dp),
-                            contentScale = ContentScale.Fit
-                        )
-                        PokemonGameName("Emerald")
-                        CurrentPokemonName("Cubone")
-                        EncounterCounter(0)
-                        Row() {
-                            CounterButtonMinus()
-                            CounterButtonPlus()
-                        }
-                    }
-
-                }
+                EncounterCounterScreen()
             }
         }
     }
@@ -105,6 +87,24 @@ fun CounterButtonPlus() {
 }
 
 @Composable
+fun EncounterCounterScreen() {
+    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+        Column(modifier = Modifier.fillMaxSize().padding(innerPadding)) {
+            ShinyHuntTrackerTitle()
+            Image(
+                painter = painterResource(R.drawable.cubone),
+                contentDescription = "Cubone sprite",
+                modifier = Modifier.size(160.dp),
+                contentScale = ContentScale.Fit
+            )
+            PokemonGameName("Emerald")
+            CurrentPokemonName("Cubone")
+            Text(text = encounters.toString())
+            Row() {
+                CounterButtonPlus(fun () {
+                    encounters++
+                })
+            }
         }
 
     }
