@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.shinyhunttracker.ui.theme.ShinyHuntTrackerTheme
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Row
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.foundation.layout.size
@@ -38,8 +39,11 @@ class MainActivity : ComponentActivity() {
                         )
                         PokemonGameName("Emerald")
                         CurrentPokemonName("Cubone")
-                        CounterButtonPlus()
-                        CounterButtonMinus()
+                        EncounterCounter(0)
+                        Row() {
+                            CounterButtonMinus()
+                            CounterButtonPlus()
+                        }
                     }
 
                 }
@@ -70,6 +74,14 @@ fun ShinyHuntTrackerTitle(name: String = "Shiny Hunt Tracker", modifier: Modifie
 fun PokemonGameName(name: String, modifier: Modifier = Modifier) {
     Text(
         text = name,
+        modifier = Modifier
+    )
+}
+
+@Composable
+fun EncounterCounter(encounters: Int, modifier: Modifier = Modifier) {
+    Text(
+        text = "${encounters}",
         modifier = Modifier
     )
 }
