@@ -34,6 +34,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+var currentHuntEncounters = 0
+
 @Composable
 fun ShinyHuntTrackerTitle(name: String = "Shiny Hunt Tracker", modifier: Modifier = Modifier) {
     Text(
