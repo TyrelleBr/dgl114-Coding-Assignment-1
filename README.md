@@ -1,42 +1,23 @@
-# Shiny Hunting Tracker
+# Shiny Hunt Tracker
 
 ## Instructions:
 - Read the app suggestions and requirements carefully posted in the Brightspace assignment drop box.
 - Things that you may consider to document in the README.md file:
     - [Introduction](#introduction)
-      - Provide a brief introduction to your application. Explain what it does, its purpose, and the problem it solves. Include any unique selling points or key benefits.
-    - [Features](#features)
-      - List the main features of your application. Be concise but informative. For example:
-        - User Authentication: Secure login and signup using email/password, Google, Facebook, or other OAuth providers.
-        - Push Notifications: Sending real-time notifications using Firebase Cloud Messaging (FCM).
-        - Offline Mode: Data caching and local storage using Room or SQLite.
-        - Real-Time Data Sync: Using Firebase Realtime Database or Cloud Firestore.
-        - In-app Purchases: Selling digital goods or subscriptions within the app.
-        - Maps Integration: Displaying maps and location data using Google Maps API.
-        - Camera and Gallery Access: Allowing users to capture or upload photos and videos.
-        - Dark Mode: A theme that changes the UI to a darker color scheme.
-        - Multilingual Support: Supporting multiple languages and locales.
-        - Analytics: Tracking user behavior and events using Google Analytics or Firebase Analytics.
-        - Social Sharing: Sharing content from the app to social media platforms.
-        - Custom Animations: Enhancing user experience with animations and transitions.
-        - Voice Commands: Integrating with Google Assistant for voice control features.
-        - Background Services: Running tasks in the background, like music playback or location tracking.
+      - To start off I would like to give a brief explaination of what shiny hunting is. In the video game series Pokemon, when encountering a wild pokemon there is a small chance that the pokemon will be what is called a shiny pokemon. A shiny pokemon is just a different colour variation to the original pokemons colours, but since the odds to find a shiny in generation 1-5 pokemon games is 1/8182 it makes obtaining a shiny pokemon highly desired. 
+
+      For this project I am hoping that I can iterate on it for future coding assignments. I will first give an explaination of my plans for the final app and then I will talk about what I plan to create for coding assignment 1.
+
+      The Shiny Hunt Tracker app aims to provide users with a simple all in one way to keep track of all past and current shiny hunts. The app will have a dashboard where users can press the "+ Add Shiny Hunt" button to create a new shiny hunt tracker. It will ask the user to enter the following information: Pokemon name, which pokemon game, custom title for the hunt, hunting method, count by size, encounters (if the user is importing info from an existing hunt, otherwise default 0), the calendar day and time the hunt started, and custom filtered groups. There will be a finish hunt button and a popup will ask the user if the hunt was completed or failed. If completed it will be added to the users pokedex (the pokedex is a digital encylopedia of the pokemon caught or seen) and the hunt will be stored under the past hunts tab. If the user selects failed, the hunt will still be stored under the past hunts tab, but it will not be added to the pokedex. The user can also manually add pokemon to their pokedex. When you press start on a hunt it will go to a screen with an counter that has a + and - button to increase or decrease that pokemons encounter number.
+
+      For coding assignment 1 I plan to start a portion of this app and build off of it for future coding assignments. The features I plan to have for the first version is just one screen for now that is displaying the current active hunt, counter + - buttons, responsive layout, and basic hunt data structure.
+    - [Features](#features) 
+      - Active Shiny hunt screen: This is the only screen for now but on this screen you can press the + and - buttons to up or lower the current hunts counter 
+
+
     - [Technologies Used](#technologies-used)
-      - Outline the main technologies and frameworks used to build the application. For example:
-        - Kotlin: A modern programming language used to build Android applications.
-        - Java: Traditional programming language for Android development.
-        - Android Studio: Official Integrated Development Environment (IDE) for Android development.
-        - XML: Used for designing UI layouts.
-        - SQLite: Local database for storing app data.
-        - Room Database: An abstraction layer over SQLite for more robust database operations.
-        - Firebase: A platform for backend services, including real-time databases, authentication, and cloud messaging.
-        - Retrofit: A type-safe HTTP client for consuming RESTful APIs.
-        - Glide or Picasso: Libraries for image loading and caching.
-        - Jetpack Compose: A modern toolkit for building native UI.
-        - LiveData and ViewModel: Components from Android Jetpack for managing UI-related data in a lifecycle-conscious way.
-        - Navigation Component: Handles navigation and transitions between fragments.
-        - WorkManager: Manages background work tasks.
-        - Data Binding: Binds UI components in layouts to data sources.
+      - Kotlin: A modern programming language used to build Android applications.
+
     - [Installation](#installation)
       - Provide a step-by-step guide on how to set up the project locally.
     - [Usage](#usage)
