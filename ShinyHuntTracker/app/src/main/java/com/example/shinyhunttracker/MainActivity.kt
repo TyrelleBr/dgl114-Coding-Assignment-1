@@ -102,20 +102,24 @@ fun EncounterCounterScreen() {
                 modifier = Modifier.size(160.dp),
                 contentScale = ContentScale.Fit
             )
-            PokemonGameName("Pokemon Emerald")
             CurrentPokemonName("Cubone")
-            Text(text = encounters.toString())
-            Row() {
+            PokemonGameName("Pokemon Emerald")
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(text = encounters.toString())
+                Row() {
 
-                CounterButtonMinus(fun () {
-                    if(encounters > 0) {
-                        encounters--
-                    }
-                })
+                    CounterButtonMinus(fun() {
+                        if (encounters > 0) {
+                            encounters--
+                        }
+                    })
 
-                CounterButtonPlus(fun () {
-                    encounters++
-                })
+                    CounterButtonPlus(fun() {
+                        encounters++
+                    })
+                }
             }
         }
 
