@@ -64,14 +64,6 @@ fun PokemonGameName(name: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun EncounterCounter(encounters: Int, modifier: Modifier = Modifier) {
-    Text(
-        text = "${encounters}",
-        modifier = modifier
-    )
-}
-
-@Composable
 fun CounterButtonPlus(onPlusClick: () -> Unit) {
 
     Button(onClick = onPlusClick
