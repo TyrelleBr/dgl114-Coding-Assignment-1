@@ -120,14 +120,18 @@ fun EncounterCounterScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             ShinyHuntTrackerTitle()
-            Image(
-                painter = painterResource(R.drawable.cubone),
-                contentDescription = "Cubone sprite",
-                modifier = Modifier.size(160.dp),
-                contentScale = ContentScale.Fit
-            )
-            CurrentPokemonName("Cubone")
-            PokemonGameName("Pokemon Emerald")
+            Column(
+                
+            ) {
+                Image(
+                    painter = painterResource(R.drawable.cubone),
+                    contentDescription = "Cubone sprite",
+                    modifier = Modifier.size(160.dp),
+                    contentScale = ContentScale.Fit
+                )
+                CurrentPokemonName("Cubone")
+                PokemonGameName("Pokemon Emerald")
+            }
             Column(
                 modifier = Modifier
                     .clip(RoundedCornerShape(15.dp))
@@ -138,7 +142,7 @@ fun EncounterCounterScreen() {
                         end = 50.dp,
                         bottom = 16.dp
                     )
-                    
+
                     ,
                 horizontalAlignment = Alignment.CenterHorizontally,
 
