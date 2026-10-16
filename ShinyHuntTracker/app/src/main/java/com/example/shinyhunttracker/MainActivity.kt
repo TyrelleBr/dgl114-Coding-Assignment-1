@@ -85,8 +85,11 @@ fun PokemonGameName(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun CounterButtonPlus(onPlusClick: () -> Unit) {
 
-    Button(onClick = onPlusClick
+    Button(
+        onClick = onPlusClick,
+        shape = RoundedCornerShape(12.dp)
     ) {
+
         Text(
             text = "+",
             fontSize = 30.sp
@@ -96,7 +99,10 @@ fun CounterButtonPlus(onPlusClick: () -> Unit) {
 
 @Composable
 fun CounterButtonMinus(onMinusClick: () -> Unit) {
-    Button(onClick = onMinusClick) {
+    Button(
+        onClick = onMinusClick,
+        shape = RoundedCornerShape(12.dp)
+    ) {
 
         Text(
             text = "-",
@@ -157,7 +163,9 @@ fun EncounterCounterScreen() {
                     color = Color(0xFFEAF2FF),
                     fontSize = 50.sp
                 )
-                Row() {
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
 
                     CounterButtonMinus(fun() {
                         if (encounters > 0) {
