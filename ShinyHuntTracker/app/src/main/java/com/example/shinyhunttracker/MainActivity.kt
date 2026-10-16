@@ -20,6 +20,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.foundation.layout.size
@@ -35,6 +37,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlin.dec
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,7 +68,7 @@ fun ShinyHuntTrackerTitle(name: String = "Shiny Hunt Tracker", modifier: Modifie
         text = name,
         modifier = modifier,
         color = Color(0xFF67E8F9),
-        fontSize = 36.sp
+        fontSize = 20.sp
     )
 }
 
@@ -121,7 +124,8 @@ fun EncounterCounterScreen() {
         ) {
             ShinyHuntTrackerTitle()
             Column(
-                
+
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Image(
                     painter = painterResource(R.drawable.cubone),
@@ -130,8 +134,9 @@ fun EncounterCounterScreen() {
                     contentScale = ContentScale.Fit
                 )
                 CurrentPokemonName("Cubone")
-                PokemonGameName("Pokemon Emerald")
+                PokemonGameName("Pokemon Fire Red")
             }
+            Spacer(modifier = Modifier.height(24.dp))
             Column(
                 modifier = Modifier
                     .clip(RoundedCornerShape(15.dp))
