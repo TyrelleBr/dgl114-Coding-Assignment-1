@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.sp
 import kotlin.dec
 import androidx.compose.ui.unit.dp
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.ui.platform.LocalConfiguration
 
 class MainActivity : ComponentActivity() {
@@ -199,7 +200,7 @@ fun EncounterCounterScreen() {
         ) { innerPadding ->
             Column(
                 modifier = Modifier.fillMaxSize().padding(innerPadding),
-                verticalArrangement = Arrangement.Top,
+                verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 ShinyHuntTrackerTitle()
