@@ -135,7 +135,11 @@ fun EncounterCounterScreen() {
             containerColor = Color(0xFF0B1120)
         ) { innerPadding ->
             Row(
-
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 16.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Column(
 
