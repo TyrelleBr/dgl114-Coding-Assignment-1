@@ -39,6 +39,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlin.dec
 import androidx.compose.ui.unit.dp
+import android.content.res.Configuration
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.ui.platform.LocalConfiguration
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -117,16 +120,23 @@ fun CounterButtonMinus(onMinusClick: () -> Unit) {
 
 @Composable
 fun EncounterCounterScreen() {
+
     var encounters by rememberSaveable() {
         mutableIntStateOf(0)
     }
+
+    val configuration = LocalConfiguration.current
+
+    var isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+
+
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         containerColor = Color(0xFF0B1120)
     ) { innerPadding ->
         Column(
             modifier = Modifier.fillMaxSize().padding(innerPadding),
-            verticalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             ShinyHuntTrackerTitle()
