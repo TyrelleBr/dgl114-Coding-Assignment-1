@@ -29,6 +29,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
@@ -116,7 +117,7 @@ fun CounterButtonMinus(onMinusClick: () -> Unit) {
 
 @Composable
 fun EncounterCounterScreen() {
-    var encounters by remember {
+    var encounters by rememberSaveable() {
         mutableIntStateOf(0)
     }
     Scaffold(
