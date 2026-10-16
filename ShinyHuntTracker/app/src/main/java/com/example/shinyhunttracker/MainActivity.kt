@@ -129,67 +129,72 @@ fun EncounterCounterScreen() {
 
     var isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 
+    if (isLandscape) {
+        Row(){
+            
+        }
+    } else {
 
-    Scaffold(
-        modifier = Modifier.fillMaxSize(),
-        containerColor = Color(0xFF0B1120)
-    ) { innerPadding ->
-        Column(
-            modifier = Modifier.fillMaxSize().padding(innerPadding),
-            verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            ShinyHuntTrackerTitle()
+
+        Scaffold(
+            modifier = Modifier.fillMaxSize(),
+            containerColor = Color(0xFF0B1120)
+        ) { innerPadding ->
             Column(
-
+                modifier = Modifier.fillMaxSize().padding(innerPadding),
+                verticalArrangement = Arrangement.Top,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Image(
-                    painter = painterResource(R.drawable.cubone),
-                    contentDescription = "Cubone sprite",
-                    modifier = Modifier.size(160.dp),
-                    contentScale = ContentScale.Fit
-                )
-                CurrentPokemonName("Cubone")
-                PokemonGameName("Pokemon Fire Red")
-            }
-            Spacer(modifier = Modifier.height(24.dp))
-            Column(
-                modifier = Modifier
-                    .clip(RoundedCornerShape(15.dp))
-                    .background(Color(0xFF131F35))
-                    .padding(
-                        start = 50.dp,
-                        top = 8.dp,
-                        end = 50.dp,
-                        bottom = 16.dp
-                    )
+                ShinyHuntTrackerTitle()
+                Column(
 
-                    ,
-                horizontalAlignment = Alignment.CenterHorizontally,
-
-            ) {
-                Text(
-                    text = encounters.toString(),
-                    color = Color(0xFFEAF2FF),
-                    fontSize = 50.sp
-                )
-                Row(
-                    horizontalArrangement = Arrangement.spacedBy(16.dp)
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
+                    Image(
+                        painter = painterResource(R.drawable.cubone),
+                        contentDescription = "Cubone sprite",
+                        modifier = Modifier.size(160.dp),
+                        contentScale = ContentScale.Fit
+                    )
+                    CurrentPokemonName("Cubone")
+                    PokemonGameName("Pokemon Fire Red")
+                }
+                Spacer(modifier = Modifier.height(24.dp))
+                Column(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(15.dp))
+                        .background(Color(0xFF131F35))
+                        .padding(
+                            start = 50.dp,
+                            top = 8.dp,
+                            end = 50.dp,
+                            bottom = 16.dp
+                        ),
+                    horizontalAlignment = Alignment.CenterHorizontally,
 
-                    CounterButtonMinus(fun() {
-                        if (encounters > 0) {
-                            encounters--
-                        }
-                    })
+                    ) {
+                    Text(
+                        text = encounters.toString(),
+                        color = Color(0xFFEAF2FF),
+                        fontSize = 50.sp
+                    )
+                    Row(
+                        horizontalArrangement = Arrangement.spacedBy(16.dp)
+                    ) {
 
-                    CounterButtonPlus(fun() {
-                        encounters++
-                    })
+                        CounterButtonMinus(fun() {
+                            if (encounters > 0) {
+                                encounters--
+                            }
+                        })
+
+                        CounterButtonPlus(fun() {
+                            encounters++
+                        })
+                    }
                 }
             }
-        }
 
+        }
     }
 }
