@@ -40,7 +40,6 @@ import androidx.compose.ui.unit.sp
 import kotlin.dec
 import androidx.compose.ui.unit.dp
 import android.content.res.Configuration
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.ui.platform.LocalConfiguration
 
 class MainActivity : ComponentActivity() {
@@ -131,7 +130,53 @@ fun EncounterCounterScreen() {
 
     if (isLandscape) {
         Row(){
-            
+            Column(
+
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Image(
+                    painter = painterResource(R.drawable.cubone),
+                    contentDescription = "Cubone sprite",
+                    modifier = Modifier.size(160.dp),
+                    contentScale = ContentScale.Fit
+                )
+                CurrentPokemonName("Cubone")
+                PokemonGameName("Pokemon Fire Red")
+            }
+            Column(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(15.dp))
+                    .background(Color(0xFF131F35))
+                    .padding(
+                        start = 50.dp,
+                        top = 8.dp,
+                        end = 50.dp,
+                        bottom = 16.dp
+                    ),
+                horizontalAlignment = Alignment.CenterHorizontally,
+
+                ) {
+                Text(
+                    text = encounters.toString(),
+                    color = Color(0xFFEAF2FF),
+                    fontSize = 50.sp
+                )
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
+
+                    CounterButtonMinus(fun() {
+                        if (encounters > 0) {
+                            encounters--
+                        }
+                    })
+
+                    CounterButtonPlus(fun() {
+                        encounters++
+                    })
+                }
+            }
+
         }
     } else {
 
